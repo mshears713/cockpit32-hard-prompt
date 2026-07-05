@@ -1,0 +1,1 @@
+# cockpit32-hard-prompt
