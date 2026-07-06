@@ -1,0 +1,11 @@
+{
+  "session_id": "20260706-010203-deadbeef",
+  "project_path": "__PROJECT_PATH__",
+  "board": {
+    "name": "esp32-s3-box-3",
+    "default_baud": 115200
+  },
+  "created_at": "2026-07-06T01:02:03+00:00",
+  "port": "COM7",
+  "baud": 115200
+}
