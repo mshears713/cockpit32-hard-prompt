@@ -1,0 +1,47 @@
+$ cockpit32 session start --project /tmp/e2e-demo
+Started session 20260706-021047-54b30839 in /tmp/e2e-demo/.cockpit32/sessions/20260706-021047-54b30839
+
+$ cockpit32 note --project /tmp/e2e-demo "pressed reset button"
+recorded note: pressed reset button
+
+$ cockpit32 build --project /tmp/e2e-demo   # idf.py absent in this agent env -> expected FAIL, real build deferred to Stage 4
+build: FAIL (see /tmp/e2e-demo/.cockpit32/sessions/20260706-021047-54b30839/build.log)
+exit=1
+
+$ cockpit32 monitor --project /tmp/e2e-demo --port COM3 --transcript tests/fixtures/monitor_transcripts/boot_guru_meditation.txt
+monitor: captured 9 lines (see /tmp/e2e-demo/.cockpit32/sessions/20260706-021047-54b30839/monitor.log)
+
+$ cockpit32 summary --project /tmp/e2e-demo
+verdict: failed
+summary written to /tmp/e2e-demo/.cockpit32/sessions/20260706-021047-54b30839/summary.json and /tmp/e2e-demo/.cockpit32/sessions/20260706-021047-54b30839/summary.md
+
+--- resulting summary.md ---
+# Cockpit 32 Session Summary — 20260706-021047-54b30839
+
+- **Verdict:** failed
+- **Generated at:** 2026-07-06T02:10:47.931055+00:00
+- **Events recorded:** 1
+
+## Phase Results
+- build: fail
+- flash: not run
+- monitor: captured
+
+## Notable Monitor Lines
+- `[boot] ets Jul 29 2019 12:21:46`
+- `[boot] rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)`
+- `[boot] entry 0x403c98d0`
+- `[error] Guru Meditation Error: Core 0 panic'ed (LoadProhibited). Exception was unhandled.`
+
+## Operator Notes
+- [2026-07-06T02:10:47.687910+00:00] (note) pressed reset button
+
+--- session directory tree ---
+/tmp/e2e-demo/.cockpit32/sessions/20260706-021047-54b30839/build.json
+/tmp/e2e-demo/.cockpit32/sessions/20260706-021047-54b30839/build.log
+/tmp/e2e-demo/.cockpit32/sessions/20260706-021047-54b30839/events.jsonl
+/tmp/e2e-demo/.cockpit32/sessions/20260706-021047-54b30839/monitor.log
+/tmp/e2e-demo/.cockpit32/sessions/20260706-021047-54b30839/session.json
+/tmp/e2e-demo/.cockpit32/sessions/20260706-021047-54b30839/summary.json
+/tmp/e2e-demo/.cockpit32/sessions/20260706-021047-54b30839/summary.md
+/tmp/e2e-demo/.cockpit32/sessions/latest
