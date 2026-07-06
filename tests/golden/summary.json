@@ -1,0 +1,14 @@
+{
+  "session_id": "20260706-010203-deadbeef",
+  "verdict": "partial",
+  "generated_at": "2026-07-06T01:05:00+00:00",
+  "phase_results": {
+    "build": true,
+    "flash": true,
+    "monitor": true
+  },
+  "notable_events": [
+    "[error] Guru Meditation Error: Core 0 panic'ed (LoadProhibited). Exception was unhandled."
+  ],
+  "event_count": 1
+}

@@ -1,0 +1,2 @@
+CMake Error at build.ninja:1234 (RUN_COMMAND):
+  ninja: build stopped: subcommand failed.

@@ -1,0 +1,3 @@
+Serial port COM3
+Connecting........_____....._____....._____
+A fatal error occurred: Failed to connect to ESP32-S3: No serial data received.

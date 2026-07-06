@@ -1,0 +1,28 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-9.1.1, pluggy-1.6.0 -- /home/user/cockpit32-hard-prompt/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/user/cockpit32-hard-prompt
+configfile: pyproject.toml
+collecting ... collected 19 items
+
+tests/unit/test_summaries.py::test_no_data_is_unknown PASSED             [  5%]
+tests/unit/test_summaries.py::test_build_failure_is_failed PASSED        [ 10%]
+tests/unit/test_summaries.py::test_flash_failure_is_failed_even_if_build_passed PASSED [ 15%]
+tests/unit/test_summaries.py::test_clean_run_is_success PASSED           [ 21%]
+tests/unit/test_summaries.py::test_monitor_error_line_after_successful_flash_is_partial PASSED [ 26%]
+tests/unit/test_summaries.py::test_monitor_warning_only_does_not_downgrade_to_partial PASSED [ 31%]
+tests/unit/test_summaries.py::test_operator_override_wins_over_computed_verdict PASSED [ 36%]
+tests/unit/test_summaries.py::test_notable_events_are_labeled_with_severity PASSED [ 42%]
+tests/unit/test_summaries.py::test_rendered_markdown_calls_monitor_captured_not_pass PASSED [ 47%]
+tests/contract/test_summary_contract.py::test_summary_json_and_markdown_match_golden_files PASSED [ 52%]
+tests/contract/test_summary_contract.py::test_summary_json_required_keys_present PASSED [ 57%]
+tests/acceptance/test_cli_doctor.py::test_doctor_runs_and_reports_python PASSED [ 63%]
+tests/acceptance/test_cli_doctor.py::test_doctor_exit_code_reflects_idf_visibility PASSED [ 68%]
+tests/acceptance/test_cli_workflow.py::test_session_start_and_show PASSED [ 73%]
+tests/acceptance/test_cli_workflow.py::test_build_without_session_gives_clear_error PASSED [ 78%]
+tests/acceptance/test_cli_workflow.py::test_build_without_idf_py_fails_gracefully PASSED [ 84%]
+tests/acceptance/test_cli_workflow.py::test_note_is_recorded_in_events PASSED [ 89%]
+tests/acceptance/test_cli_workflow.py::test_monitor_with_transcript_and_summary_end_to_end PASSED [ 94%]
+tests/acceptance/test_cli_workflow.py::test_summary_verdict_override PASSED [100%]
+
+============================== 19 passed in 0.06s ==============================

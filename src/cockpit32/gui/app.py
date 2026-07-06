@@ -1,14 +1,20 @@
+"""GUI entry point: `python -m cockpit32.gui.app`."""
+
 from __future__ import annotations
 
 import sys
 
-from cockpit32.gui.main_window import QApplication, MainWindow
 
+def main() -> int:
+    from PySide6.QtWidgets import QApplication
 
-def run() -> int:
-    if QApplication is None:
-        raise RuntimeError("PySide6 is not installed. Install PySide6 for the GUI shell before Stage 4 GUI commissioning.")
-    app = QApplication.instance() or QApplication(sys.argv)
+    from cockpit32.gui.main_window import MainWindow
+
+    app = QApplication(sys.argv)
     window = MainWindow()
     window.show()
     return app.exec()
+
+
+if __name__ == "__main__":
+    sys.exit(main())

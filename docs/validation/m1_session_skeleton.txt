@@ -1,0 +1,23 @@
+$ uv run pytest tests/unit/test_sessions.py tests/contract/test_session_contract.py -v
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-9.1.1, pluggy-1.6.0 -- /home/user/cockpit32-hard-prompt/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/user/cockpit32-hard-prompt
+configfile: pyproject.toml
+collecting ... collected 13 items
+
+tests/unit/test_sessions.py::test_create_session_without_hardware PASSED [  7%]
+tests/unit/test_sessions.py::test_create_session_sets_latest_pointer PASSED [ 15%]
+tests/unit/test_sessions.py::test_second_session_updates_latest_pointer PASSED [ 23%]
+tests/unit/test_sessions.py::test_load_session_defaults_to_latest PASSED [ 30%]
+tests/unit/test_sessions.py::test_load_session_by_explicit_id PASSED     [ 38%]
+tests/unit/test_sessions.py::test_load_session_raises_when_none_exist PASSED [ 46%]
+tests/unit/test_sessions.py::test_load_session_raises_for_unknown_id PASSED [ 53%]
+tests/unit/test_sessions.py::test_append_and_read_events_roundtrip PASSED [ 61%]
+tests/unit/test_sessions.py::test_read_events_empty_session_returns_empty_list PASSED [ 69%]
+tests/unit/test_sessions.py::test_session_ids_are_deterministic_given_clock PASSED [ 76%]
+tests/contract/test_session_contract.py::test_session_json_matches_golden_shape PASSED [ 84%]
+tests/contract/test_session_contract.py::test_session_json_required_keys_present PASSED [ 92%]
+tests/contract/test_session_contract.py::test_events_jsonl_is_one_json_object_per_line PASSED [100%]
+
+============================== 13 passed in 0.04s ==============================

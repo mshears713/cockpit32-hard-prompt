@@ -1,12 +1,13 @@
 __pycache__/
 *.py[cod]
-.pytest_cache/
-.ruff_cache/
-.venv/
-dist/
-build/
 *.egg-info/
+.pytest_cache/
+.venv/
+.ruff_cache/
+build/
+dist/
+
+# Project-local session data (belongs to the ESP-IDF project being
+# debugged, not to this repo) — ignored in case cockpit32 is ever run
+# against this repo's own working tree during manual testing.
 .cockpit32/
-sdkconfig
-sdkconfig.old
-managed_components/
