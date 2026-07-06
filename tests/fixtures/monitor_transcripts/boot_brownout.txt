@@ -1,0 +1,5 @@
+ets Jul 29 2019 12:21:46
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Brownout detector was triggered
+entry 0x403c98d0
+I (28) boot: ESP-IDF v5.2 2nd stage bootloader

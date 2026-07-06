@@ -1,0 +1,8 @@
+ets Jul 29 2019 12:21:46
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+entry 0x403c98d0
+I (28) boot: ESP-IDF v5.2 2nd stage bootloader
+I (612) cpu_start: Starting scheduler.
+I (620) box3_demo: Display initialized
+I (630) box3_demo: Touch controller ready
+I (2001) box3_demo: Application main loop started
