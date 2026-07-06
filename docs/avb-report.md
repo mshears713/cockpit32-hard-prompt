@@ -15,6 +15,7 @@ See `docs/validation/stage3-validation.md` and `docs/validation-ledger.md`.
 ## Provisional deltas
 
 - Code-level: GUI build/flash/monitor buttons are not implemented in the first shell; the GUI provides doctor, session, and note workflow over the shared core. CLI contains the full build/flash/monitor path. Stage 4 should decide whether GUI buttons are fix-before-acceptance or acceptable for this AVB iteration.
+- Code-level (2026-07-05, Claude Code re-verification): `IdfRunner.run` failed on Windows (`WinError 193`) when invoking the fake `idf.py` fixture directly, because Windows does not execute `.py` files without going through the interpreter. Original AVB evidence was captured on Linux only, where the shebang line masked this. Fixed by prepending `sys.executable` when `idf_command` ends in `.py`; does not change architecture or product intent. Re-verified 8/8 tests passing on Windows. See `docs/validation/stage3-validation.md`.
 
 ## Known limitations
 

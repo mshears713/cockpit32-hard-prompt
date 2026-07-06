@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import shutil
 import subprocess
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -17,7 +18,10 @@ class IdfRunner:
 
     def run(self, args: list[str], cwd: Path, log_path: Path, timeout: float | None = None) -> CommandResult:
         started = datetime.now(timezone.utc)
-        command = [self.idf_command, *args]
+        if self.idf_command.endswith(".py"):
+            command = [sys.executable, self.idf_command, *args]
+        else:
+            command = [self.idf_command, *args]
         proc = subprocess.run(
             command,
             cwd=str(cwd),
