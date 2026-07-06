@@ -1,0 +1,2 @@
+A fatal error occurred: Could not open port 'COM3': PermissionError(13, 'Access is denied.')
+esptool.py failed: could not open port COM3
