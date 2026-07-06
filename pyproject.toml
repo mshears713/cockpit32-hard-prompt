@@ -1,0 +1,22 @@
+[project]
+name = "cockpit32"
+version = "0.1.0"
+description = "Local ESP32-S3-BOX-3 mission-control tool for ESP-IDF build/flash/monitor sessions."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+cockpit32 = "cockpit32.cli:main"
+
+[dependency-groups]
+dev = []
+
+[build-system]
+requires = []
+build-backend = "build_backend"
+backend-path = ["."]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
